@@ -9,6 +9,7 @@
 <li> Hbs </li>
 <li> Google Maps API</li>
 <li> Dadata API</li>
+<li> Dotenv</li>
 </ul>
 
 <h3> How to start </h3>

@@ -10,7 +10,7 @@ findCoordinatesForm.addEventListener("submit", async (event) => {
     headers: {
       'Content-Type': 'application/json;charset=utf-8',
       "Accept": "application/json",
-      "Authorization": "Token 1dece4c2c20dc44893da99091df724ac23470a82"
+      "Authorization": "Token process.env.DADATA_KEY_TOKEN"
     },
     body: JSON.stringify({
       "query": event.target.address.value

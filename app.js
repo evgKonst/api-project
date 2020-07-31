@@ -1,7 +1,11 @@
 const express = require("express");
 const path = require("path");
+const dotenv = require('dotenv')
+
 
 const app = express();
+
+dotenv.config()
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");

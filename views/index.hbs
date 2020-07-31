@@ -57,15 +57,14 @@
 
 <script>
   $("#addressId").suggestions({
-    token: "1dece4c2c20dc44893da99091df724ac23470a82",
+    token: process.env.DADATA_KEY_TOKEN,
     type: "ADDRESS",
     onSelect: function (suggestion) { },
   });
 </script>
 
-<script defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGdqVgdq52TMcxrvnQObjBH18Zg7-HGso&callback=initMap">
-  </script>
+<script defer src="https://maps.googleapis.com/maps/api/js?key=process.env.GOOGLEMAPS_KEY&callback=initMap">
+</script>
 <script defer src="./markerMake.js"></script>
 <script defer src="./findCoordinates.js"></script>
 <script src="./script.js"></script>
