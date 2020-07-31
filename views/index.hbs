@@ -1,0 +1,71 @@
+<div class=" bg-light">
+  <div class="alert alert-primary align-center" role="alert">
+    <h4 class="text-center">Welcome to MarkerMaker!</h4>
+  </div>
+  <form action="/game" method="get" class="float-right mr-4">
+    <button id="btnGame" class="btn btn-success btn-sm">
+      play puzzle
+    </button>
+  </form>
+
+  <form action="" method="post" id="findCoordinatesForm">
+    <div class="form-group d-flex flex-row justify-content-center">
+      <input id="addressId" name="address" type="text" value="" placeholder="write address"
+        class="form-control w-50 h-50 mr-3">
+      <button type="submit" id="btnFindAdress" class="btn btn-outline-primary btn-sm mr-2">
+        find coordinates
+      </button>
+      <a href="/directions" class="border border-success inline">directions</a>
+    </div>
+  </form>
+
+  <div class="invisible d-flex justify-content-center position-absolute" id="history">
+    <label class="mr-2">historical name:</label>
+    <p class="mt-2" id="historyP"></p>
+  </div>
+
+  <form class="">
+    <div class="d-flex justify-content-around">
+      <div class="form-group d-flex ">
+        <label class="mr-1" for="longitude">longitude:</label>
+        <input type="number" class="form-control h-75" id="longitude" min="-180" max="180" value="" step="0.000001"
+          placeholder="59.938888" />
+      </div>
+      <div class="form-group d-flex">
+        <label class="mr-1" for="latitude">latitude:</label>
+        <input type="number" class="form-control h-75" id="latitude" min="-90" max="90" value="" step="0.000001"
+          placeholder="30.315230" />
+      </div>
+      <div class="form-group d-flex">
+        <label class="mr-1" for="zoom">zoom:</label>
+        <input type="number" class="form-control h-75" id="zoom" min="0" max="20" value="16" step="1"
+          placeholder="enter 6 digits after ." />
+      </div>
+      <div class="form-group">
+        <button id="btnFindPlace" class="btn btn-outline-primary btn-sm ">
+          find place
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+<div id="map"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.3.0/dist/css/suggestions.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.3.0/dist/js/jquery.suggestions.min.js"></script>
+
+<script>
+  $("#addressId").suggestions({
+    token: "1dece4c2c20dc44893da99091df724ac23470a82",
+    type: "ADDRESS",
+    onSelect: function (suggestion) { },
+  });
+</script>
+
+<script defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGdqVgdq52TMcxrvnQObjBH18Zg7-HGso&callback=initMap">
+  </script>
+<script defer src="./markerMake.js"></script>
+<script defer src="./findCoordinates.js"></script>
+<script src="./script.js"></script>
